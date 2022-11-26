@@ -11,13 +11,11 @@ const {products : product} =useFetch({id})
    
 
 
-console.log(product) 
     return (
-       
-    <main className={classes.content}>
-     <div className={classes.toolbar} />
-      <h1>{id}</h1>
-      <h2>{product.name}</h2>
-    </main>
-    )
+      <main className={classes.content}>
+        <div className={classes.toolbar} />
+        <h1>{id}</h1>
+        <h2>{product.name}</h2>
+      </main>
+    );
 }

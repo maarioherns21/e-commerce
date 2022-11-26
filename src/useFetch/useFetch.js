@@ -18,22 +18,26 @@ export default function useFetch () {
       }
       };
     
-      ///this function fetches 
+      ///this function fetches the cart data 
       const fetchCart = async () => {
       try {
-        const data  = await commerce.cart.retrieve()
-        
-        setCart(data);
+        const cart = await commerce.cart.retrieve()
+       
+        console.log("FetchCart",cart)
+        setCart(cart);
       } catch (error) {
         setError(error.message)
       }
       };
-    
+
+
+      //this handle is for the Onclick to add products into the shopping Cart
       const handleAddToCart = async (productId, quantity) => {
        try {
         const item = await commerce.cart.add(productId, quantity);
-    
-        setCart(item.cart);
+        
+       console.log("ClickingAddingToCart", item)
+        setCart(item);
        } catch (error) {
         setError(error.message)
        }
@@ -44,6 +48,7 @@ export default function useFetch () {
         fetchProducts()
         fetchCart()
     } , []) 
+
 
     return {
         products , cart , error,  handleAddToCart

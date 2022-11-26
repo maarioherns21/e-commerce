@@ -1,7 +1,7 @@
-import { Grid } from "@material-ui/core"
+import { Grid } from "@mui/material" 
 import Product from "./Product/Product"
 import useStyles from "./styles"
-import { Link } from "react-router-dom"
+
 
 
 export default function Products({ products, onAddToCart }) {
@@ -16,7 +16,7 @@ export default function Products({ products, onAddToCart }) {
       <div className={classes.toolbar} />
       <Grid container justify-content="center" spacing={4}>
         {products.map((product) => (
-          <Grid item key={product.id} sx={12} sm={6} md={4} lg={3}>
+          <Grid item key={product.id} sm={6} md={4} lg={3}>
             <Product product={product} onAddToCart={onAddToCart} />
           </Grid>
         ))}
